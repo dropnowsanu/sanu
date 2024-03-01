@@ -1,11 +1,12 @@
 "use client";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Menu, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ModeToggle";
 import { usePathname } from "next/navigation";
+import { MobileMenu } from "@/components/MobileMenu";
 
 type Props = {};
 
@@ -102,7 +103,7 @@ const Header = (props: Props) => {
               <Button className="bg-gradient-to-r from-sky-500 from-10% via-sky-400 via-50% to-teal-400 to-90% hidden md:block">
                 Subscribe
               </Button>
-              <Menu className="w-7 h-7 sm:hidden" />
+              <MobileMenu />
             </motion.div>
           </div>
         </div>
