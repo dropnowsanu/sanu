@@ -16,7 +16,7 @@ const Hero = (props: Props) => {
     <section>
       <div className="mx-auto max-w-screen-xl px-4 pt-8 sm:px-6 sm:pt-12 lg:px-8 lg:pt-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <div className="relative h-64 overflow-hidden rounded-t-lg sm:h-80 lg:order-last lg:h-full">
+          <div className="relative h-64 overflow-hidden rounded-t-lg sm:h-80 order-last lg:h-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -35,34 +35,33 @@ const Hero = (props: Props) => {
                 src="/images/pattern-1.svg"
                 width={24}
                 height={24}
-                className="absolute top-6 left-1"
+                className="absolute top-6 left-5 md:left-1"
               />
               <Image
                 alt="img"
                 src="/images/pattern-2.svg"
                 width={28}
                 height={28}
-                className="absolute top-12 right-32"
+                className="absolute top-12 right-11 md:right-32"
               />
               <Image
                 alt="img"
                 src="/images/pattern-3.svg"
                 width={28}
                 height={28}
-                className="absolute bottom-10 left-1 animate-bounce duration-1000"
+                className="absolute bottom-10 left-4 md:left-1 animate-bounce duration-1000"
               />
               <motion.div
-              initial={{scale: 0}}
-              animate={{scale: 1}}
-              
-              transition={{ duration: 1 }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 1 }}
               >
                 <Image
                   alt="img"
                   src="/images/pattern-4.svg"
                   width={28}
                   height={28}
-                  className="absolute bottom-20 right-32 animate-ping duration-1000"
+                  className="absolute bottom-20 md:right-32 right-10 animate-ping duration-1000"
                 />
               </motion.div>
             </motion.div>
@@ -83,11 +82,11 @@ const Hero = (props: Props) => {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-2 sm:text-4xl"
             >
-              <span className={`${messiri.className} text-6xl font-bold`}>
+              <span className={`${messiri.className} text-4xl md:text-6xl font-bold`}>
                 I'm
               </span>
               <span
-                className={`${messiri.className} text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400`}
+                className={`${messiri.className} text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400`}
               >
                 <Typewriter
                   options={{
