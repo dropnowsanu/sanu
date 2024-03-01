@@ -42,11 +42,24 @@ const Cards = [
     articale: 10,
     img: "https://jthemes.net/themes/wp/genz/wp-content/uploads/2023/02/design.png",
   },
+  {
+    id: 7,
+    name: "Healthy",
+    articale: 10,
+    img: "https://jthemes.net/themes/wp/genz/wp-content/uploads/2023/02/lifestyle.png",
+  },
+  {
+    id: 8,
+    name: "Interviews",
+    articale: 10,
+    img: "https://jthemes.net/themes/wp/genz/wp-content/uploads/2023/02/sport.png",
+  },
 ];
 
 const HotTopics = (props: Props) => {
   const [windowWidth, setWindowWidth] = useState(0);
-  const [slicedCards, setSlicedCards] = useState(6);
+  const [slicedCards, setSlicedCards] = useState(1);
+  const [startSlice, setStartSlice] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,25 +67,41 @@ const HotTopics = (props: Props) => {
     };
 
     // Add event listener to window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Initial window width
     setWindowWidth(window.innerWidth);
 
     // Cleanup function
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   useEffect(() => {
     // Slice cards based on window width
-    if (windowWidth <= 768) { // Change the value according to your breakpoint for mobile
+    if (windowWidth <= 768) {
+      // Change the value according to your breakpoint for mobile
       setSlicedCards(1);
+      setStartSlice(0);
     } else {
       setSlicedCards(6);
+      setStartSlice(0);
     }
   }, [windowWidth, Cards]);
+
+  const handleLeft = () => {
+    if (startSlice > 0) {
+      setStartSlice(startSlice - 1);
+      setSlicedCards(slicedCards - 1);
+    }
+  };
+  const handleRight = () => {
+    if (slicedCards != Cards.length && startSlice != Cards.length - 1) {
+      setStartSlice(startSlice + 1);
+      setSlicedCards(slicedCards + 1);
+    }
+  };
   return (
     <div className="mx-auto max-w-screen-xl">
       <div className="border mx-8 p-6 border-slate-300 shadow-lg bg-gradient-to-l from-slate-200 via-sky-50 to-slate-200 rounded-md shadow-teal-500/10">
@@ -84,11 +113,21 @@ const HotTopics = (props: Props) => {
               review, Food guide...
             </p>
             <div className="flex items-center gap-4">
-              <ArrowLeftCircleIcon className="w-6 h-6 cursor-pointer" />
-              <ArrowRightCircleIcon className="w-6 h-6 cursor-pointer" />
+              <ArrowLeftCircleIcon
+                onClick={() => handleLeft()}
+                className={`${
+                  startSlice === 0 && "text-muted-foreground"
+                } w-6 h-6 cursor-pointer`}
+              />
+              <ArrowRightCircleIcon
+                onClick={() => handleRight()}
+                className={`${
+                  slicedCards === Cards.length && "text-muted-foreground"
+                } w-6 h-6 cursor-pointer`}
+              />
             </div>
           </div>
-          {Cards.slice(0, slicedCards).map((card) => (
+          {Cards.slice(startSlice, slicedCards).map((card) => (
             <div key={card.id} className="relative">
               <Image
                 alt="img"
