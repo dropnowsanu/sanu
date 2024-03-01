@@ -54,7 +54,7 @@ const Footer = (props: Props) => {
   return (
     <div className="w-full h-full py-6">
       <div className="max-w-7xl mx-auto p-10 border rounded-3xl border-slate-300 shadow-sm bg-gradient-to-bl from-teal-50 via-sky-50 to-green-50">
-        <div className="grid grid-cols-3 mb-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 mb-6 gap-6">
           <div className="flex flex-col gap-4">
             <Logo />
             <p className="text-slate-600">
@@ -89,7 +89,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
         <Separator />
-        <div className="pt-6 flex justify-between items-center">
+        <div className="pt-6 flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center gap-1">
             <span className="text-slate-600">
               &copy; {new Date().getFullYear()} Created by
