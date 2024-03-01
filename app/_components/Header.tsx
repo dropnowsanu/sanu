@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ModeToggle";
@@ -52,7 +52,7 @@ const Header = (props: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-8"
+            className="md:flex items-center gap-8 hidden"
           >
             {Links.map((link) => (
               <Link
@@ -73,7 +73,16 @@ const Header = (props: Props) => {
               </Link>
             ))}
           </motion.ul>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 2 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Search className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-slate-900" />
+            </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -86,23 +95,14 @@ const Header = (props: Props) => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              whileHover={{ scale: 1.5 }}
-              whileTap={{ scale: 2 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Search className="w-5 h-5 text-muted-foreground cursor-pointer" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 1.5 }}
               transition={{ duration: 1.5 }}
             >
-              <Button className="bg-gradient-to-r from-sky-500 from-10% via-sky-400 via-50% to-teal-400 to-90% ">
+              <Button className="bg-gradient-to-r from-sky-500 from-10% via-sky-400 via-50% to-teal-400 to-90% hidden md:block">
                 Subscribe
               </Button>
+              <Menu className="w-7 h-7 sm:hidden" />
             </motion.div>
           </div>
         </div>
