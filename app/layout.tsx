@@ -26,7 +26,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen w-full bg-gradient-to-bl from-teal-50 via-slate-50 to-sky-100">
+          <div className="flex flex-col min-h-screen w-full bg-gradient-to-bl from-teal-50 via-slate-50 to-sky-100 dark:from-blue-950 dark:via-slate-800 dark:to-slate-900">
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />

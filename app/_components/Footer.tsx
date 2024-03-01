@@ -53,7 +53,7 @@ const Categories = [
 const Footer = (props: Props) => {
   return (
     <div className="w-full h-full py-6">
-      <div className="max-w-7xl mx-auto p-10 border rounded-3xl border-slate-300 shadow-sm bg-gradient-to-bl from-teal-50 via-sky-50 to-green-50">
+      <div className="max-w-7xl mx-auto p-10 border rounded-3xl border-slate-300 shadow-sm bg-gradient-to-bl from-teal-50 via-sky-50 to-green-50 dark:from-blue-950/30 dark:via-slate-800 dark:to-gray-950/50 dark:border-teal-400">
         <div className="grid grid-cols-1 md:grid-cols-3 mb-6 gap-6">
           <div className="flex flex-col gap-4">
             <Logo />
@@ -63,14 +63,14 @@ const Footer = (props: Props) => {
               galley and scrambled it to five centurie.
             </p>
             <div>
-              <h2 className="font-bold text-lg text-slate-700">Address</h2>
+              <h2 className="font-bold text-lg text-slate-700 dark:text-slate-400">Address</h2>
               <p className="text-slate-600">
                 123 Main Street New York, NY 10001
               </p>
             </div>
           </div>
           <div className="space-y-8">
-            <h2 className="font-bold text-lg text-slate-700">Categories</h2>
+            <h2 className="font-bold text-lg text-slate-700 dark:text-slate-400">Categories</h2>
             <div className="grid grid-cols-2 justify-between items-center gap-2">
               {Categories.map((category) => (
                 <Link
@@ -84,7 +84,7 @@ const Footer = (props: Props) => {
             </div>
           </div>
           <div className="space-y-8">
-            <h2 className="font-bold text-lg text-slate-700">Newsletter</h2>
+            <h2 className="font-bold text-lg text-slate-700 dark:text-slate-400">Newsletter</h2>
             <NewsLatter />
           </div>
         </div>

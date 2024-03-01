@@ -21,7 +21,7 @@ const Hero = (props: Props) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="w-full h-full bg-gradient-to-bl from-teal-50/80 via-white/5 via-50% to-sky-50/30 rounded-tr-full pl-10 pt-4"
+              className="w-full h-full bg-gradient-to-bl from-teal-50/80 via-white/5 via-50% to-sky-50/30 rounded-tr-full pl-10 pt-4 dark:from-blue-950 dark:via-slate-800 dark:to-blue-950/20"
             >
               <Image
                 alt="img"
@@ -82,7 +82,7 @@ const Hero = (props: Props) => {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-2 sm:text-4xl"
             >
-              <span className={`${messiri.className} text-4xl md:text-6xl font-bold`}>
+              <span className={`${messiri.className} text-4xl md:text-6xl font-bold dark:text-slate-300`}>
                 I'm
               </span>
               <span
@@ -118,7 +118,7 @@ const Hero = (props: Props) => {
               <Input
                 type="email"
                 placeholder="Type your email address"
-                className="h-14 border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-200"
+                className="h-14 border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-200 dark:from-slate-400 dark:via-slate-500 dark:to-slate-600"
               />
               <Button
                 type="submit"

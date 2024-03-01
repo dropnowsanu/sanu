@@ -59,8 +59,8 @@ const Header = (props: Props) => {
                 key={link.id}
                 href={link.link}
                 className={`${
-                  pathname === link.link && "text-cyan-500"
-                } text-slate-600 text-lg hover:text-cyan-500`}
+                  pathname === link.link && "text-cyan-500 dark:text-teal-400"
+                } text-slate-600 text-lg hover:text-cyan-500 dark:text-slate-400 dark:hover:text-cyan-400`}
               >
                 <motion.li
                   initial={{ opacity: 0 }}
@@ -81,7 +81,7 @@ const Header = (props: Props) => {
               whileTap={{ scale: 2 }}
               transition={{ duration: 0.5 }}
             >
-              <Search className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-slate-900" />
+              <Search className="w-5 h-5 text-muted-foreground cursor-pointer hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}

@@ -48,7 +48,7 @@ const NewsLatter = (props: Props) => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Your full name" {...field} className="border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-50"/>
+                  <Input placeholder="Your full name" {...field} className="border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-50 dark:from-slate-400 dark:via-slate-500 dark:to-slate-600"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -60,7 +60,7 @@ const NewsLatter = (props: Props) => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Your email address" {...field} className="border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-50"/>
+                  <Input placeholder="Your email address" {...field} className="border-teal-400 bg-gradient-to-l from-slate-50 via-slate-100 to-slate-50 dark:from-slate-400 dark:via-slate-500 dark:to-slate-600"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>

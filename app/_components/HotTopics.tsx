@@ -2,6 +2,9 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { El_Messiri } from "next/font/google";
+
+const messiri = El_Messiri({ subsets: ["latin"] });
 
 type Props = {};
 
@@ -104,10 +107,12 @@ const HotTopics = (props: Props) => {
   };
   return (
     <div className="mx-auto max-w-screen-xl">
-      <div className="border mx-8 p-6 border-slate-300 shadow-lg bg-gradient-to-l from-slate-200 via-sky-50 to-slate-200 rounded-md shadow-teal-500/10">
+      <div className="border mx-8 p-6 border-slate-300 shadow-lg bg-gradient-to-l from-slate-200 via-sky-50 to-slate-200 rounded-md shadow-teal-500/10 dark:fom-slate-800 dark:via-slate-500 dark:to-slate-600 dark:border-sky-400">
         <div className="grid grid-cols-1 md:grid-cols-7 gap-5">
           <div className="col-span-1 space-y-4">
-            <h2 className="text-xl font-bold">Hot topics</h2>
+            <h2 className={`${messiri.className} text-2xl font-bold dark:text-slate-300`}>
+              Hot topics
+              </h2>
             <p className="text-sm text-muted-foreground">
               Don't miss out on the latest news about Travel tips, Hotels
               review, Food guide...
